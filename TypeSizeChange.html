@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>untitled</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Pascal Wever">
+	<!-- Date: 2009-01-03 -->
+	<style type="text/css" media="screen">
+	
+		html, body, ul, li {
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+		
+		div, span, p, i, b, h1, h2, h3, h4, h5, h6, ul, li {
+			font-size: 1em;
+			font-weight: normal;
+			line-height: 1.5em;
+			padding: 0;
+			margin: 0;
+		}
+		
+		off#grid {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url('images/21px.png');
+		}
+				
+		#container {
+			min-width: 20em !important;
+		}
+		
+		#header {
+			height: 6em;
+			background-color: #EEE;
+		}
+		
+		#header h1 {
+			font-family: Helvetica;
+			font-weight: bolder;
+			font-size: .75em;
+			line-height: 2em;
+			margin-left: 1em;
+		}
+		
+		#content {
+			position: relative;
+			background-color: #DDD;
+		}
+		
+		#main {
+			width: 20em;
+			min-width: 20em;
+			margin-left: 10em;
+			off-background-color: #CCC;
+		}
+		
+		#main h1, #main h2, #main h3 {
+			margin-bottom: 1.5em;
+			font-family: Helvetica;
+			font-weight: bolder;
+		}
+		
+		.banner {
+			height: 9em;
+			margin-right: 1em;
+			overflow: hidden;
+			margin-bottom: 1.5em;
+		}
+		
+		.banner img {
+			position: relative;
+			top: -50%;
+			off-vertical-align: middle;
+			width: 100%;
+			height: auto;
+		}
+		
+		.section {
+			padding-right: 1em;
+			-moz-column-width: 18em;
+			-moz-column-gap: 1.5em;
+			-webkit-column-width: 18em;
+			-webkit-column-gap: 1em;
+			padding-bottom:1.5em;
+			off-border-bottom: 1px dotted #999;
+		}
+		
+		.gallery {
+			width:101%;
+		}
+		
+		.gallery img {
+			margin-right: 1em;
+			margin-bottom: 1em;
+			display: inline;
+			width: 19em;
+			height: auto;
+		}
+		
+		.section:after {
+			content: "•";
+			text-align: center;
+			color: #999;
+			display: block;
+		}
+		
+		.section img {
+			max-width: 19em;
+			height: auto;
+			float: left;
+			margin-right: .75em;
+		}
+		
+		#side {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 10em;
+		}
+		
+		#side li, #side h2 {
+			font-family: Helvetica;
+			font-weight: bolder;
+			font-size: .75em;
+			color: #666;
+			line-height: 2em;
+			padding-left: 1em;
+		}
+		
+		#side h2 {
+			margin-top: 2em;
+			color: #000;
+		}
+		
+	</style>
+	
+	<script src="jquery-1.2.6.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+		function scale(){
+			var min_px_size = 8;
+			var max_px_size = 14;
+			var min_layout_width = 50.0; // in EMs
+			var em = $(window).width() / min_layout_width;
+			var px = (em<min_px_size) ? min_px_size : (em>max_px_size) ? max_px_size : em;
+			//$('html').css('font-size', px);
+			
+			
+			// At the optimal font size
+			// Create columns in case we have a lot of vertical space
+			// Add column without resizing them (Firefox default)
+			var available_width = $(window).width()-$('#side').width();
+			var columns = available_width / (20.0*px);
+			columns = Math.floor(columns);
+			$('#main').css('width', columns*20.0*px);
+			
+		}
+		$(document).ready(scale);
+		$(window).resize(scale);
+	</script>
+	
+</head>
+<body>
+	
+<div id="container">
+	<div id="header">
+		<h1>Header</h1>
+	</div>
+	<div id="content">
+		<div id="side">
+			<ul id="navigation">
+				<li>Main</li>
+				<li>Navigation</li>
+				<li>Category</li>
+				<li>Section</li>
+			</ul>
+			
+			<h2>Links</h2>
+			<ul id="navigation">
+				<li>Main</li>
+				<li>Navigation</li>
+				<li>Category</li>
+				<li>Section</li>
+			</ul>
+			
+		</div>
+		<div id="main">
+			<h1>Main content</h1>
+			<div class="section">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+			
+			<h2>Introduction</h2>
+			<div class="section">
+				<p>
+					<img src="images/DSC00122.jpg" width="480" height="640" alt="DSC00122" style="width:9.5em;">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+			
+			<div class="banner">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+			</div>
+			
+			<h2>Content</h2>
+			<div class="section">
+				<p>
+					<img src="images/DSC00133.jpg" width="480" height="640" alt="DSC00133">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+			
+			<h2>Gallery</h2>
+			<div class="gallery">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+				<img src="images/DSC00121.jpg" width="640" height="480" alt="DSC00121">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="grid">
+	&nbsp;
+</div>
+
+</body>
+</html>
